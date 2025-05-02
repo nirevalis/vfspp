@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.50)
 project(vfspp VERSION 1.0 LANGUAGES CXX)
 option(BUILD_EXAMPLES "Build examples" OFF)
 # Add the miniz-cpp library
-add_subdirectory(vendor/miniz-cpp EXCLUDE_FROM_ALL)
+add_subdirectory(vendor/miniz EXCLUDE_FROM_ALL)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -19,7 +19,7 @@ target_include_directories(vfspp
     INTERFACE 
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/miniz-cpp>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/miniz>
 )
 
 target_compile_features(vfspp INTERFACE cxx_std_17)
